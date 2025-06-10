@@ -1,0 +1,297 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Poppins", Verdana, Tahoma, sans-serif;
+  background-color: #e8f1f2;
+  color: #333;
+  margin: 0;
+  padding: 0px;
+  line-height: 1.6;
+  margin: 5% 10%;
+  font-size: 1em;
+}
+h1 {
+  color: #e8f1f2;
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 350;
+}
+h2 {
+  color: #e8f1f2;
+  text-align: center;
+  font-size: 2em;
+  text-shadow: 2px 5px 13px #f02eaa;
+  width: 100%;
+  text-align: center;
+  font-weight: 300;
+}
+.card-back h2,
+.card-back p {
+  color: #e8f1f2;
+}
+
+nav {
+  background-color: rgba(114, 9, 183, 0.75);
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  border-radius: 0px 0px 55px 0px;
+}
+
+#introduction {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  position: fixed;
+  top: 0;
+}
+#introduction > p {
+  width: 35%;
+  position: fixed;
+  right: 11%;
+  padding: 8px;
+  font-size: 0.95em;
+  font-style: oblique;
+}
+main {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10%;
+}
+article {
+  width: 25%;
+  height: 600px;
+  margin: 0 10px;
+  box-shadow: rgba(240, 46, 170, 0.4) -5px 5px,
+    rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px,
+    rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+}
+.card-container {
+  margin: 0 auto;
+  background-color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+}
+div > img {
+  width: 100%;
+  object-fit: cover;
+}
+.contribution-image {
+  height: 100%;
+}
+.card-front > h2 {
+  position: fixed;
+  bottom: 10%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.profile-image {
+  padding: 0;
+  width: 100%;
+  object-fit: contain;
+  max-height: 500px;
+}
+.card-back > h2 {
+  position: fixed;
+  bottom: 45%;
+  background-color: rgba(134, 131, 109, 0.3);
+}
+.bio {
+  position: absolute;
+  top: 55%;
+  background-color: #86836d;
+  padding: 15px;
+  text-align: left;
+  height: 40%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.card {
+  width: 100%;
+  height: 600px;
+  position: relative;
+}
+.card-back,
+.card-front {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+}
+.card-front {
+  z-index: 2;
+  background-color: #ff8e72;
+}
+.card-back {
+  z-index: 1;
+  background-color: #86836d;
+  overflow: auto;
+}
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+/* Card Flip Effect */
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+.card-front {
+  backface-visibility: hidden;
+}
+.card {
+  transform-style: preserve-3d;
+}
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* Card Image Zoom Effect */
+
+.card-container:hover .card-back img {
+  transform: scale(1.2);
+  transition: all 0.6s ease-in-out;
+}
+footer {
+  color: #60463b;
+  font-size: 0.7em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+/* Animation for fade-in effect */
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+.fadeInUp-animation {
+  animation: 1.3s fadeInUp;
+}
+
+/* Responsive Design */
+
+@media screen and (min-width: 1300px) {
+  body {
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: 1200px) {
+  main {
+    margin-top: 15%;
+  }
+  nav {
+    padding: 2px 9px;
+  }
+  h2 {
+    font-size: 1em;
+  }
+  .card-back > h2 {
+   position: absolute;
+    top: 250px;
+  }
+  #introduction {
+    display: block;
+    top: 10%;
+    width: 100%;
+    left: 0;
+  }
+  #introduction > p {
+    width: 100%;
+    position: relative;
+    right: 0%;
+    font-size: 0.8em;
+  }
+  footer {
+    font-size: 0.75em;
+  }
+}
+@media screen and (min-width: 1300px) and (max-width: 1343px) {
+  main {
+    margin-top: 15%;
+  }
+}
+@media screen and (max-width: 1300px) {
+  main {
+    margin-top: 17%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  main {
+    display: block;
+    margin-top: 8%;
+  }
+  article {
+    width: 100%;
+    
+    margin: 10px 0 100px 0;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  h2 {
+    font-size: 1.6em;
+  }
+  .card-front h2 {
+    font-size: 1.7em;
+  }
+  .card-back {
+    overflow: hidden;
+  }
+  #introduction {
+    position: relative;
+  }
+  #introduction > p {
+    width: 97%;
+  }
+  .card-back > h2 {
+  top: 350px;
+  height: 100%;
+}
+  .bio {
+  position: absolute;
+  top: 70%;
+  background-color: #86836d;
+  text-align: left;
+  height: 30%;
+  }
+}
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 1em;
+  }
+  .card-back > h2 {
+  top: 220px;
+  height: 100%;
+  }
+  .bio {
+  position: absolute;
+  top: 50%;
+  background-color: #86836d;
+  text-align: left;
+  height: 50%;
+  }
+  footer {
+    font-size: 0.6em;
+  }
+}
+
+
